@@ -9,6 +9,8 @@ spring:
         binder:
           zkNodes: localhost
           brokers: localhost
+  main:
+    allow-bean-definition-overriding: true
 
 #Setting the logging levels for the service
 logging:
