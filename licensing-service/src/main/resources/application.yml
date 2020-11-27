@@ -1,15 +1,19 @@
 spring:
   cloud:
     stream:
+      default-binder: kafka
       bindings:
         inboundOrgChanges:
+          binder: kafka
           destination: orgChangeTopic
           content-type: application/json
           group: licensingGroup
       kafka:
         binder:
-          zkNodes: localhost
-          brokers: localhost
+          zkNodes: 
+          - localhost:2181
+          brokers: 
+          - localhost:9092
   main:
     allow-bean-definition-overriding: true
 
